@@ -73,24 +73,25 @@ try:
 	print("Battery percentage: %s" % start_battery)
 	t.takeoff()
 	time.sleep(0.5)
-	t.units('in')
-	t.move_up(42) #height to middle of one point slit
-	t.move_forward(72)
+	#t.units('in') commented out due to  ERROR MainThread 'str' object is not callable
+	t.move_up(106) #height to middle of one point slit
+	t.move_forward(182)
 	t.rotate_ccw(45) #turning towards hoola hoop
-	#t.move_down(30)
-	t.move_forward(140)
+	#t.move_down(30) commented out due to minimum flight height
+	t.move_forward(355)
 	t.rotate_ccw(45)
-	t.move_forward(38) #hopefully get close to landing pad
+	t.move_forward(96) #hopefully get close to landing pad
 	t.land()
-	time.sleep(1)
+	time.sleep(5) #Wait after sleeping
+
 	t.takeoff()
 	time.sleep(0.5)
 	t.rotate_ccw(135)	#rotating to move back
-	t.move_forward(78)
+	t.move_forward(198)
 	t.rotate_cw(30)	#smaller rotation 
-	t.move_forward(78)	#go back towards original landing
+	t.move_forward(198)	#go back towards original landing
 	t.rotate_cw(15)
-	t.move_forward(40)
+	t.move_forward(102)
 	t.land()
 	print("Mission failed successfully!")
 
